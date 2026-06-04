@@ -20,352 +20,120 @@
       --font-h:     'Playfair Display', serif;
       --font-b:     'Poppins', sans-serif;
     }
-
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: var(--font-b); color: var(--text); overflow-x: hidden; }
-
-    /* ========== NAV ========== */
     nav {
       position: fixed; top: 0; width: 100%; z-index: 999;
-      background: rgba(13,27,42,0.95);
-      backdrop-filter: blur(12px);
+      background: rgba(13,27,42,0.95); backdrop-filter: blur(12px);
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 6%; height: 70px;
       border-bottom: 1px solid rgba(201,168,76,0.2);
     }
-
     .nav-logo { cursor: pointer; }
-    .nav-logo img {
-      height: 52px; object-fit: contain;
-      filter: drop-shadow(0 0 8px rgba(240,208,128,0.4));
-    }
-
+    .nav-logo img { height: 52px; object-fit: contain; filter: drop-shadow(0 0 8px rgba(240,208,128,0.4)); }
     .nav-links { display: flex; gap: 0; list-style: none; }
-
     .nav-links li a {
-      display: block;
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      font-size: .78rem;
-      font-weight: 500;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      padding: .5rem 1.2rem;
-      border-radius: 50px;
-      transition: all .2s;
-      cursor: pointer;
+      display: block; color: rgba(255,255,255,0.75); text-decoration: none;
+      font-size: .78rem; font-weight: 500; letter-spacing: 1.2px; text-transform: uppercase;
+      padding: .5rem 1.2rem; border-radius: 50px; transition: all .2s; cursor: pointer;
     }
-
-    .nav-links li a:hover  { color: var(--gold-light); }
-    .nav-links li a.active {
-      background: rgba(201,168,76,0.15);
-      color: var(--gold-light);
-      border: 1px solid rgba(201,168,76,0.3);
-    }
-
-    /* ========== SISTEMA DE PÁGINAS ========== */
+    .nav-links li a:hover { color: var(--gold-light); }
+    .nav-links li a.active { background: rgba(201,168,76,0.15); color: var(--gold-light); border: 1px solid rgba(201,168,76,0.3); }
     .page { display: none; }
     .page.active { display: block; }
-
-    /* ========== PÁGINA INICIAL ========== */
     #page-inicio { background: var(--sand); }
-
-    /* HERO */
     #hero {
-      position: relative;
-      height: 100vh;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 70px 6% 0;
-      overflow: hidden;
+      position: relative; height: 100vh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 70px 6% 0; overflow: hidden;
     }
-
-    .hero-bg {
-      position: absolute; inset: 0;
-      background-image: url('image1.jpeg');
-      background-size: cover; background-position: center;
-      filter: brightness(0.42); z-index: 0;
-    }
-
-    #hero::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to bottom, rgba(13,27,42,0.25) 0%, rgba(13,27,42,0.65) 100%);
-      z-index: 1;
-    }
-
+    .hero-bg { position: absolute; inset: 0; background-image: url('image1.jpeg'); background-size: cover; background-position: center; filter: brightness(0.42); z-index: 0; }
+    #hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(13,27,42,0.25) 0%, rgba(13,27,42,0.65) 100%); z-index: 1; }
     .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
-
-    .hero-logo {
-      width: min(260px, 45vw);
-      max-height: 30vh;
-      object-fit: contain;
-      margin-bottom: 1.2rem;
-      filter: drop-shadow(0 4px 20px rgba(201,168,76,0.5));
-      animation: logoFade 1.2s ease-out;
-    }
-
-    @keyframes logoFade {
-      from { opacity: 0; transform: translateY(-20px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .hero-tagline {
-      font-family: var(--font-h); font-style: italic;
-      font-size: clamp(1rem, 2.5vw, 1.7rem);
-      color: var(--gold-light); letter-spacing: 2px; margin-bottom: .6rem;
-    }
-
-    .hero-sub {
-      font-size: clamp(.75rem, 1.3vw, .9rem);
-      color: rgba(255,255,255,0.65);
-      letter-spacing: 3px; text-transform: uppercase; margin-bottom: 2rem;
-    }
-
-    .btn {
-      display: inline-block; padding: .9rem 2.8rem; border-radius: 50px;
-      font-family: var(--font-b); font-size: .82rem; font-weight: 600;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      transition: transform .2s, box-shadow .2s; cursor: pointer; border: none; text-decoration: none;
-    }
-
-    .btn-gold {
-      background: linear-gradient(135deg, var(--gold), #E8B84B);
-      color: var(--night); box-shadow: 0 4px 20px rgba(201,168,76,0.45);
-    }
-
+    .hero-logo { width: min(260px, 45vw); max-height: 30vh; object-fit: contain; margin-bottom: 1.2rem; filter: drop-shadow(0 4px 20px rgba(201,168,76,0.5)); animation: logoFade 1.2s ease-out; }
+    @keyframes logoFade { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+    .hero-tagline { font-family: var(--font-h); font-style: italic; font-size: clamp(1rem, 2.5vw, 1.7rem); color: var(--gold-light); letter-spacing: 2px; margin-bottom: .6rem; }
+    .hero-sub { font-size: clamp(.75rem, 1.3vw, .9rem); color: rgba(255,255,255,0.65); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 2rem; }
+    .btn { display: inline-block; padding: .9rem 2.8rem; border-radius: 50px; font-family: var(--font-b); font-size: .82rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; transition: transform .2s, box-shadow .2s; cursor: pointer; border: none; text-decoration: none; }
+    .btn-gold { background: linear-gradient(135deg, var(--gold), #E8B84B); color: var(--night); box-shadow: 0 4px 20px rgba(201,168,76,0.45); }
     .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(201,168,76,0.65); }
-
-    .btn-outline {
-      background: transparent; color: var(--white); border: 2px solid var(--gold);
-    }
-
+    .btn-outline { background: transparent; color: var(--white); border: 2px solid var(--gold); }
     .btn-outline:hover { background: var(--gold); color: var(--night); transform: translateY(-3px); }
-
-    /* APOLO */
-    #apolo-section {
-      background: var(--night); color: var(--white); padding: 100px 6%;
-    }
-
-    .label {
-      font-size: .7rem; letter-spacing: 4px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: .8rem;
-    }
-
-    .section-title {
-      font-family: var(--font-h); font-size: clamp(1.9rem, 3.5vw, 3rem);
-      line-height: 1.15; margin-bottom: 1.2rem;
-    }
-
-    .section-body {
-      font-size: .93rem; line-height: 1.85; color: var(--muted); max-width: 600px;
-    }
-
+    #apolo-section { background: var(--night); color: var(--white); padding: 100px 6%; }
+    .label { font-size: .7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: .8rem; }
+    .section-title { font-family: var(--font-h); font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.15; margin-bottom: 1.2rem; }
+    .section-body { font-size: .93rem; line-height: 1.85; color: var(--muted); max-width: 600px; }
     #apolo-section .section-title { color: var(--gold-light); }
-
-    .apolo-grid {
-      display: grid; grid-template-columns: 1fr 1.2fr;
-      gap: 5rem; align-items: center; margin-top: 3.5rem;
-    }
-
+    .apolo-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: center; margin-top: 3.5rem; }
     .apolo-img-wrap { position: relative; }
-    .apolo-img-wrap img {
-      width: 100%; border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    }
-
-    .apolo-img-wrap::before {
-      content: ''; position: absolute; inset: -8px;
-      border-radius: 26px; border: 1px solid rgba(201,168,76,0.3); pointer-events: none;
-    }
-
-    .apolo-text h3 {
-      font-family: var(--font-h); color: var(--gold-light);
-      font-size: 1.3rem; margin-bottom: .8rem;
-    }
-
-    .apolo-text .section-body {
-      color: rgba(255,255,255,0.72); max-width: 100%; margin-bottom: 1.8rem;
-    }
-
-    /* ========== PÁGINA SUNSET BEACH ========== */
+    .apolo-img-wrap img { width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .apolo-img-wrap::before { content: ''; position: absolute; inset: -8px; border-radius: 26px; border: 1px solid rgba(201,168,76,0.3); pointer-events: none; }
+    .apolo-text h3 { font-family: var(--font-h); color: var(--gold-light); font-size: 1.3rem; margin-bottom: .8rem; }
+    .apolo-text .section-body { color: rgba(255,255,255,0.72); max-width: 100%; margin-bottom: 1.8rem; }
     #page-masc { background: var(--sand); }
-
-    .page-hero {
-      position: relative; height: calc(100vh - 70px); overflow: hidden;
-    }
-
-    .page-hero img {
-      width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
-    }
-
-    .page-hero-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(13,27,42,0.82) 0%, rgba(13,27,42,0.1) 65%);
-      display: flex; align-items: center; padding: 0 8%;
-    }
-
+    .page-hero { position: relative; height: calc(100vh - 70px); overflow: hidden; }
+    .page-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+    .page-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(13,27,42,0.82) 0%, rgba(13,27,42,0.1) 65%); display: flex; align-items: center; padding: 0 8%; }
     .page-hero-overlay .section-title { color: var(--white); }
-    .page-hero-overlay .section-body  { color: rgba(255,255,255,0.75); }
-
+    .page-hero-overlay .section-body { color: rgba(255,255,255,0.75); }
     .products-section { padding: 80px 6%; }
-
-    .collection-intro {
-      margin-bottom: 3rem; padding-bottom: 2rem;
-      border-bottom: 1px solid rgba(201,168,76,0.25);
-    }
-
+    .collection-intro { margin-bottom: 3rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(201,168,76,0.25); }
     .collection-intro .section-title { color: var(--navy); }
-
-    .collection-tag {
-      display: inline-block; background: var(--gold); color: var(--night);
-      font-size: .65rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; padding: .3rem 1rem; border-radius: 50px; margin-bottom: 1rem;
-    }
-
+    .collection-tag { display: inline-block; background: var(--gold); color: var(--night); font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: .3rem 1rem; border-radius: 50px; margin-bottom: 1rem; }
     .products-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; }
-
-    .product-card {
-      background: var(--white); border-radius: 22px; overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
-      transition: transform .3s, box-shadow .3s;
-    }
-
+    .product-card { background: var(--white); border-radius: 22px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.07); transition: transform .3s, box-shadow .3s; }
     .product-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.14); }
-
-    .product-img-wrap {
-      width: 100%; height: 280px; background: var(--cream); overflow: hidden;
-    }
-
-    .product-img-wrap img {
-      width: 100%; height: 100%; object-fit: cover; object-position: center top;
-      transition: transform .4s ease;
-    }
-
+    .product-img-wrap { width: 100%; height: 280px; background: var(--cream); overflow: hidden; }
+    .product-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .4s ease; }
     .product-card:hover .product-img-wrap img { transform: scale(1.05); }
-
     .product-info { padding: 1.4rem 1.6rem 1.8rem; }
-
     .product-name { font-family: var(--font-h); font-size: 1.1rem; color: var(--navy); margin-bottom: .3rem; }
-
     .product-line { font-size: .72rem; color: var(--gold-dark); letter-spacing: 2px; text-transform: uppercase; margin-bottom: .9rem; }
-
     .product-price { font-family: var(--font-h); font-size: 1.6rem; color: var(--gold-dark); font-weight: 700; }
     .product-price sup { font-size: .8rem; font-family: var(--font-b); font-weight: 400; vertical-align: super; }
-
-    .btn-card {
-      display: block; width: 100%; margin-top: 1.2rem; padding: .72rem;
-      background: var(--navy); color: var(--white); border-radius: 50px;
-      font-family: var(--font-b); font-size: .78rem; font-weight: 600;
-      letter-spacing: 1.5px; text-transform: uppercase; border: none; cursor: pointer;
-      transition: background .2s;
-    }
-
+    .btn-card { display: block; width: 100%; margin-top: 1.2rem; padding: .72rem; background: var(--navy); color: var(--white); border-radius: 50px; font-family: var(--font-b); font-size: .78rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border: none; cursor: pointer; transition: background .2s; }
     .btn-card:hover { background: #2A5580; }
-
-    /* ========== PÁGINA FEMININA ========== */
     #page-fem { background: var(--cream); }
-
-    .page-hero-overlay-right {
-      position: absolute; inset: 0;
-      background: linear-gradient(to left, rgba(13,27,42,0.82) 0%, rgba(13,27,42,0.1) 65%);
-      display: flex; align-items: center; justify-content: flex-end; padding: 0 8%;
-    }
-
+    .page-hero-overlay-right { position: absolute; inset: 0; background: linear-gradient(to left, rgba(13,27,42,0.82) 0%, rgba(13,27,42,0.1) 65%); display: flex; align-items: center; justify-content: flex-end; padding: 0 8%; }
     .page-hero-overlay-right .section-title { color: var(--white); text-align: right; }
-    .page-hero-overlay-right .section-body  { color: rgba(255,255,255,0.75); text-align: right; }
-
-    /* ========== PÁGINA DESCONTO ========== */
-    #page-desconto {
-      min-height: 100vh;
-      background: linear-gradient(135deg, #7B4F00, var(--gold-dark), var(--gold));
-      display: flex; align-items: center; justify-content: center;
-    }
-
+    .page-hero-overlay-right .section-body { color: rgba(255,255,255,0.75); text-align: right; }
+    #page-desconto { min-height: 100vh; background: linear-gradient(135deg, #7B4F00, var(--gold-dark), var(--gold)); display: flex; align-items: center; justify-content: center; }
     .desconto-inner { text-align: center; padding: 80px 6%; max-width: 700px; margin: 0 auto; }
-
     .desconto-inner .label { color: rgba(255,255,255,0.7); }
     .desconto-inner .section-title { color: var(--white); }
     .desconto-inner .section-body { color: rgba(255,255,255,0.85); margin: 0 auto 2.5rem; max-width: 500px; }
-
-    .discount-pill {
-      display: inline-block; background: var(--white); color: var(--gold-dark);
-      font-family: var(--font-h); font-size: 4rem; font-weight: 700;
-      padding: .4rem 2.8rem; border-radius: 20px; margin-bottom: 1.5rem;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    }
-
-    /* ========== PÁGINA DIFERENCIAIS ========== */
-    #page-diferenciais {
-      min-height: 100vh; background: var(--white);
-      display: flex; align-items: center;
-    }
-
+    .discount-pill { display: inline-block; background: var(--white); color: var(--gold-dark); font-family: var(--font-h); font-size: 4rem; font-weight: 700; padding: .4rem 2.8rem; border-radius: 20px; margin-bottom: 1.5rem; box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+    #page-diferenciais { min-height: 100vh; background: var(--white); display: flex; align-items: center; }
     .diferenciais-inner { padding: 100px 6%; width: 100%; }
     .diferenciais-inner .section-title { color: var(--navy); }
-
     .diff-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2.5rem; margin-top: 3.5rem; }
-
-    .diff-card {
-      padding: 3rem 2rem; border-radius: 24px; text-align: center;
-      border: 1px solid rgba(201,168,76,0.2);
-      transition: box-shadow .25s, transform .25s;
-    }
-
+    .diff-card { padding: 3rem 2rem; border-radius: 24px; text-align: center; border: 1px solid rgba(201,168,76,0.2); transition: box-shadow .25s, transform .25s; }
     .diff-card:hover { box-shadow: 0 12px 40px rgba(201,168,76,0.18); transform: translateY(-4px); }
-
     .diff-card img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 1.4rem; }
     .diff-icon { font-size: 3rem; display: block; margin-bottom: 1.2rem; }
-
     .diff-card h3 { font-family: var(--font-h); font-size: 1.25rem; color: var(--navy); margin-bottom: .7rem; }
-    .diff-card p  { font-size: .88rem; color: var(--muted); line-height: 1.7; }
-
-    /* ========== FOOTER (aparece em todas as páginas) ========== */
-    footer {
-      background: var(--night); color: rgba(255,255,255,0.5);
-      text-align: center; padding: 2.5rem 6%;
-    }
-
+    .diff-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+    footer { background: var(--night); color: rgba(255,255,255,0.5); text-align: center; padding: 2.5rem 6%; }
     footer img { height: 55px; object-fit: contain; margin-bottom: .8rem; opacity: .85; }
     footer p { font-size: .8rem; line-height: 1.8; }
     footer strong { color: var(--gold-light); }
-
-    /* ========== RESPONSIVO ========== */
-    @media (max-width: 900px) {
-      .apolo-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
-      .products-grid { grid-template-columns: 1fr 1fr; }
-      .diff-grid    { grid-template-columns: 1fr; }
-    }
-
-    @media (max-width: 600px) {
-      .nav-links li a { font-size: .68rem; padding: .4rem .7rem; letter-spacing: .5px; }
-      .products-grid  { grid-template-columns: 1fr; }
-      .page-hero      { height: 320px; }
-    }
+    @media (max-width: 900px) { .apolo-grid { grid-template-columns: 1fr; gap: 2.5rem; } .products-grid { grid-template-columns: 1fr 1fr; } .diff-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .nav-links li a { font-size: .68rem; padding: .4rem .7rem; letter-spacing: .5px; } .products-grid { grid-template-columns: 1fr; } .page-hero { height: 320px; } }
   </style>
 </head>
 <body>
-
-<!-- ===== NAV ===== -->
 <nav>
-  <div class="nav-logo" onclick="showPage('inicio')">
-    <img src="image4.png" alt="Golden Shore" />
-  </div>
+  <div class="nav-logo" onclick="showPage('inicio')"><img src="image4.png" alt="Golden Shore" /></div>
   <ul class="nav-links">
-    <li><a onclick="showPage('inicio')"    id="nav-inicio"    class="active">Início</a></li>
-    <li><a onclick="showPage('masc')"      id="nav-masc">Sunset Beach</a></li>
-    <li><a onclick="showPage('fem')"       id="nav-fem">Iluminando os Mares</a></li>
-    <li><a onclick="showPage('desconto')"  id="nav-desconto">Desconto</a></li>
-    <li><a onclick="showPage('dif')"       id="nav-dif">Diferenciais</a></li>
+    <li><a onclick="showPage('inicio')" id="nav-inicio" class="active">Início</a></li>
+    <li><a onclick="showPage('masc')" id="nav-masc">Sunset Beach</a></li>
+    <li><a onclick="showPage('fem')" id="nav-fem">Iluminando os Mares</a></li>
+    <li><a onclick="showPage('desconto')" id="nav-desconto">Desconto</a></li>
+    <li><a onclick="showPage('dif')" id="nav-dif">Diferenciais</a></li>
   </ul>
 </nav>
-
-<!-- ============================= -->
-<!-- PÁGINA 1 — INÍCIO / APOLO   -->
-<!-- ============================= -->
 <div id="page-inicio" class="page active">
-
-  <!-- HERO -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-content">
@@ -375,268 +143,81 @@
       <button class="btn btn-gold" onclick="showPage('masc')">Explorar Coleções</button>
     </div>
   </section>
-
-  <!-- APOLO -->
   <section id="apolo-section">
     <p class="label">Nossa Inspiração</p>
     <h2 class="section-title">A ligação com Apolo</h2>
-
     <div class="apolo-grid">
-      <div class="apolo-img-wrap">
-        <img src="image6.png" alt="Apolo, deus do sol, da arte e da música" />
-      </div>
+      <div class="apolo-img-wrap"><img src="image6.png" alt="Apolo" /></div>
       <div class="apolo-text">
         <h3>Quem é Apolo?</h3>
-        <p class="section-body">
-          Apolo é um dos deuses mais importantes da mitologia grega. Filho de Zeus e da titã Leto, e irmão gêmeo da deusa Ártemis, era representado como um jovem belo, forte e inteligente — símbolo da harmonia, da beleza e da luz. Governava o sol, a música, a arte e o conhecimento.
-        </p>
+        <p class="section-body">Apolo é um dos deuses mais importantes da mitologia grega. Filho de Zeus e da titã Leto, e irmão gêmeo da deusa Ártemis, era representado como um jovem belo, forte e inteligente — símbolo da harmonia, da beleza e da luz. Governava o sol, a música, a arte e o conhecimento.</p>
         <h3 style="margin-top:1.8rem;">Por que Apolo?</h3>
-        <p class="section-body">
-          A Golden Shore remete a Apolo porque ele não é apenas o deus do sol — é também o deus da arte, da música e da luz. Por isso focamos em produtos que remetem à praia e ao sol, e ao mesmo tempo à arte e à elegância. Cada peça carrega o brilho dourado que é quase divino.
-        </p>
+        <p class="section-body">A Golden Shore remete a Apolo porque ele não é apenas o deus do sol — é também o deus da arte, da música e da luz. Por isso focamos em produtos que remetem à praia e ao sol, e ao mesmo tempo à arte e à elegância. Cada peça carrega o brilho dourado que é quase divino.</p>
       </div>
     </div>
   </section>
-
-  <footer>
-    <img src="image4.png" alt="Golden Shore" />
-    <p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p>
-    <p>Criado por <strong>Camily, Miguel e Noah</strong> · Trabalho de História · Victor Cecchini</p>
-  </footer>
+  <footer><img src="image4.png" alt="Golden Shore" /><p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p><p>Criado por <strong>Camily, Miguel e Noah</strong> &middot; Trabalho de História &middot; Victor Cecchini</p></footer>
 </div>
-
-<!-- ============================= -->
-<!-- PÁGINA 2 — SUNSET BEACH      -->
-<!-- ============================= -->
 <div id="page-masc" class="page">
-
-  <div class="page-hero" style="margin-top:70px;">
-    <img src="image11.png" alt="Homem na praia ao pôr do sol" />
-    <div class="page-hero-overlay">
-      <div>
-        <p class="label" style="color:var(--gold);">Linha Masculina</p>
-        <h2 class="section-title">Sunset Beach</h2>
-        <p class="section-body" style="color:rgba(255,255,255,0.75);">A praia do pôr do sol. Calma, elegante e dourada.</p>
-      </div>
-    </div>
-  </div>
-
+  <div class="page-hero" style="margin-top:70px;"><img src="image11.png" alt="Homem na praia" /><div class="page-hero-overlay"><div><p class="label" style="color:var(--gold);">Linha Masculina</p><h2 class="section-title">Sunset Beach</h2><p class="section-body" style="color:rgba(255,255,255,0.75);">A praia do pôr do sol. Calma, elegante e dourada.</p></div></div></div>
   <div class="products-section">
-    <div class="collection-intro">
-      <span class="collection-tag">Linha Masculina</span>
-      <h2 class="section-title" style="color:var(--navy);">Sunset Beach</h2>
-      <p class="section-body">
-        "Sunset Beach" — praia do pôr do sol — remete a um ambiente calmo e relaxante. A estética dos nossos produtos lembra o sol e a arte que Apolo representa, trazendo elegância ao dia a dia masculino na praia.
-      </p>
-    </div>
-
+    <div class="collection-intro"><span class="collection-tag">Linha Masculina</span><h2 class="section-title" style="color:var(--navy);">Sunset Beach</h2><p class="section-body">"Sunset Beach" — praia do pôr do sol — remete a um ambiente calmo e relaxante. A estética dos nossos produtos lembra o sol e a arte que Apolo representa, trazendo elegância ao dia a dia masculino na praia.</p></div>
     <div class="products-grid">
-      <div class="product-card">
-        <div class="product-img-wrap"><img src="image9.png" alt="Bermuda Sunset Beach" /></div>
-        <div class="product-info">
-          <p class="product-name">Bermuda Sunset</p>
-          <p class="product-line">Sunset Beach · Masculino</p>
-          <p class="product-price"><sup>R$</sup>15,90</p>
-          <button class="btn-card">Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img-wrap"><img src="image10.png" alt="Boné Apolo" /></div>
-        <div class="product-info">
-          <p class="product-name">Boné Apolo</p>
-          <p class="product-line">Sunset Beach · Masculino</p>
-          <p class="product-price"><sup>R$</sup>11,90</p>
-          <button class="btn-card">Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img-wrap"><img src="image7.png" alt="Kimono Dourado" /></div>
-        <div class="product-info">
-          <p class="product-name">Kimono Dourado</p>
-          <p class="product-line">Sunset Beach · Masculino</p>
-          <p class="product-price"><sup>R$</sup>20,90</p>
-          <button class="btn-card">Adicionar ao carrinho</button>
-        </div>
-      </div>
+      <div class="product-card"><div class="product-img-wrap"><img src="image9.png" alt="Bermuda" /></div><div class="product-info"><p class="product-name">Bermuda Sunset</p><p class="product-line">Sunset Beach &middot; Masculino</p><p class="product-price"><sup>R$</sup>15,90</p><button class="btn-card">Adicionar ao carrinho</button></div></div>
+      <div class="product-card"><div class="product-img-wrap"><img src="image10.png" alt="Boné" /></div><div class="product-info"><p class="product-name">Boné Apolo</p><p class="product-line">Sunset Beach &middot; Masculino</p><p class="product-price"><sup>R$</sup>11,90</p><button class="btn-card">Adicionar ao carrinho</button></div></div>
+      <div class="product-card"><div class="product-img-wrap"><img src="image7.png" alt="Kimono" /></div><div class="product-info"><p class="product-name">Kimono Dourado</p><p class="product-line">Sunset Beach &middot; Masculino</p><p class="product-price"><sup>R$</sup>20,90</p><button class="btn-card">Adicionar ao carrinho</button></div></div>
     </div>
   </div>
-
-  <footer>
-    <img src="image4.png" alt="Golden Shore" />
-    <p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p>
-    <p>Criado por <strong>Camily, Miguel e Noah</strong> · Trabalho de História · Victor Cecchini</p>
-  </footer>
+  <footer><img src="image4.png" alt="Golden Shore" /><p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p><p>Criado por <strong>Camily, Miguel e Noah</strong> &middot; Trabalho de História &middot; Victor Cecchini</p></footer>
 </div>
-
-<!-- ============================= -->
-<!-- PÁGINA 3 — ILUMINANDO OS MARES -->
-<!-- ============================= -->
 <div id="page-fem" class="page">
-
-  <div class="page-hero" style="margin-top:70px;">
-    <img src="image15.png" alt="Mulher na praia ao pôr do sol" />
-    <div class="page-hero-overlay-right">
-      <div>
-        <p class="label" style="color:var(--gold);">Coleção Feminina</p>
-        <h2 class="section-title">Iluminando os Mares</h2>
-        <p class="section-body" style="color:rgba(255,255,255,0.75);">A luz que as nossas roupas representam.</p>
-      </div>
-    </div>
-  </div>
-
+  <div class="page-hero" style="margin-top:70px;"><img src="image15.png" alt="Mulher na praia" /><div class="page-hero-overlay-right"><div><p class="label" style="color:var(--gold);">Coleção Feminina</p><h2 class="section-title">Iluminando os Mares</h2><p class="section-body" style="color:rgba(255,255,255,0.75);">A luz que as nossas roupas representam.</p></div></div></div>
   <div class="products-section" style="background:var(--cream);">
-    <div class="collection-intro">
-      <span class="collection-tag">Coleção Feminina</span>
-      <h2 class="section-title" style="color:var(--navy);">Iluminando os Mares</h2>
-      <p class="section-body">
-        Escolhemos esse nome porque queríamos representar a luz que as nossas roupas transmitem. Cada peça feminina foi pensada para iluminar quem a veste, como os raios de Apolo sobre o mar.
-      </p>
-    </div>
-
+    <div class="collection-intro"><span class="collection-tag">Coleção Feminina</span><h2 class="section-title" style="color:var(--navy);">Iluminando os Mares</h2><p class="section-body">Escolhemos esse nome porque queríamos representar a luz que as nossas roupas transmitem. Cada peça feminina foi pensada para iluminar quem a veste, como os raios de Apolo sobre o mar.</p></div>
     <div class="products-grid">
-      <div class="product-card">
-        <div class="product-img-wrap"><img src="image13.png" alt="Maiô Solar" /></div>
-        <div class="product-info">
-          <p class="product-name">Maiô Solar</p>
-          <p class="product-line">Iluminando os Mares · Feminino</p>
-          <p class="product-price"><sup>R$</sup>17,00</p>
-          <button class="btn-card">Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img-wrap"><img src="image12.png" alt="Colete Lumina" /></div>
-        <div class="product-info">
-          <p class="product-name">Colete Lumina</p>
-          <p class="product-line">Iluminando os Mares · Feminino</p>
-          <p class="product-price"><sup>R$</sup>14,00</p>
-          <button class="btn-card">Adicionar ao carrinho</button>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img-wrap"><img src="image14.png" alt="Kaftan Aurora" /></div>
-        <div class="product-info">
-          <p class="product-name">Kaftan Aurora</p>
-          <p class="product-line">Iluminando os Mares · Feminino</p>
-          <p class="product-price"><sup>R$</sup>21,00</p>
-          <button class="btn-card">Adicionar ao carrinho</button>
-        </div>
-      </div>
+      <div class="product-card"><div class="product-img-wrap"><img src="image13.png" alt="Maiô" /></div><div class="product-info"><p class="product-name">Maiô Solar</p><p class="product-line">Iluminando os Mares &middot; Feminino</p><p class="product-price"><sup>R$</sup>17,00</p><button class="btn-card">Adicionar ao carrinho</button></div></div>
+      <div class="product-card"><div class="product-img-wrap"><img src="image12.png" alt="Colete" /></div><div class="product-info"><p class="product-name">Colete Lumina</p><p class="product-line">Iluminando os Mares &middot; Feminino</p><p class="product-price"><sup>R$</sup>14,00</p><button class="btn-card">Adicionar ao carrinho</button></div></div>
+      <div class="product-card"><div class="product-img-wrap"><img src="image14.png" alt="Kaftan" /></div><div class="product-info"><p class="product-name">Kaftan Aurora</p><p class="product-line">Iluminando os Mares &middot; Feminino</p><p class="product-price"><sup>R$</sup>21,00</p><button class="btn-card">Adicionar ao carrinho</button></div></div>
     </div>
   </div>
-
-  <footer>
-    <img src="image4.png" alt="Golden Shore" />
-    <p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p>
-    <p>Criado por <strong>Camily, Miguel e Noah</strong> · Trabalho de História · Victor Cecchini</p>
-  </footer>
+  <footer><img src="image4.png" alt="Golden Shore" /><p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p><p>Criado por <strong>Camily, Miguel e Noah</strong> &middot; Trabalho de História &middot; Victor Cecchini</p></footer>
 </div>
-
-<!-- ============================= -->
-<!-- PÁGINA 4 — DESCONTO          -->
-<!-- ============================= -->
 <div id="page-desconto" class="page" style="min-height:100vh;display:none;flex-direction:column;">
   <div style="flex:1;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#7B4F00,var(--gold-dark),var(--gold));padding-top:70px;">
-    <div class="desconto-inner">
-      <p class="label">Promoção de Boas-Vindas</p>
-      <div class="discount-pill">R$ 7,00 OFF</div>
-      <h2 class="section-title">Na sua primeira compra</h2>
-      <p class="section-body">
-        Ganhe R$&nbsp;7,00 de desconto na sua primeira compra. Uma forma de celebrar a sua chegada ao universo Golden Shore.
-      </p>
-      <button class="btn btn-outline" onclick="showPage('masc')">Explorar produtos</button>
-    </div>
+    <div class="desconto-inner"><p class="label">Promoção de Boas-Vindas</p><div class="discount-pill">R$ 7,00 OFF</div><h2 class="section-title">Na sua primeira compra</h2><p class="section-body">Ganhe R$&nbsp;7,00 de desconto na sua primeira compra. Uma forma de celebrar a sua chegada ao universo Golden Shore.</p><button class="btn btn-outline" onclick="showPage('masc')">Explorar produtos</button></div>
   </div>
-  <footer>
-    <img src="image4.png" alt="Golden Shore" />
-    <p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p>
-    <p>Criado por <strong>Camily, Miguel e Noah</strong> · Trabalho de História · Victor Cecchini</p>
-  </footer>
+  <footer><img src="image4.png" alt="Golden Shore" /><p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p><p>Criado por <strong>Camily, Miguel e Noah</strong> &middot; Trabalho de História &middot; Victor Cecchini</p></footer>
 </div>
-
-<!-- ============================= -->
-<!-- PÁGINA 5 — DIFERENCIAIS      -->
-<!-- ============================= -->
 <div id="page-dif" class="page">
   <div class="diferenciais-inner" style="padding-top:130px;">
     <p class="label" style="color:var(--gold-dark);">Por que nos escolher?</p>
     <h2 class="section-title" style="color:var(--navy);">Nossos Diferenciais</h2>
     <p class="section-body">Cada peça Golden Shore é criada com um compromisso absoluto com quem a usa.</p>
-
     <div class="diff-grid">
-      <div class="diff-card">
-        <span class="diff-icon">🌟</span>
-        <h3>Conforto Excepcional</h3>
-        <p>Peças desenvolvidas para o calor, sem abrir mão do estilo. Liberdade de movimento em cada detalhe.</p>
-      </div>
-      <div class="diff-card">
-        <span class="diff-icon">✨</span>
-        <h3>Qualidade</h3>
-        <p>Materiais selecionados com cuidado para garantir durabilidade e acabamento digno de uma marca inspirada nos deuses.</p>
-      </div>
-      <div class="diff-card">
-        <img src="image16.png" alt="Segurança de Consumo Golden Shore" />
-        <h3>Segurança de Consumo</h3>
-        <p>Compromisso total com a transparência e segurança em cada etapa da sua compra. Você pode confiar na Golden Shore.</p>
-      </div>
+      <div class="diff-card"><span class="diff-icon">🌟</span><h3>Conforto Excepcional</h3><p>Peças desenvolvidas para o calor, sem abrir mão do estilo. Liberdade de movimento em cada detalhe.</p></div>
+      <div class="diff-card"><span class="diff-icon">✨</span><h3>Qualidade</h3><p>Materiais selecionados com cuidado para garantir durabilidade e acabamento digno de uma marca inspirada nos deuses.</p></div>
+      <div class="diff-card"><img src="image16.png" alt="Segurança de Consumo" /><h3>Segurança de Consumo</h3><p>Compromisso total com a transparência e segurança em cada etapa da sua compra.</p></div>
     </div>
   </div>
-
-  <footer>
-    <img src="image4.png" alt="Golden Shore" />
-    <p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p>
-    <p>Criado por <strong>Camily, Miguel e Noah</strong> · Trabalho de História · Victor Cecchini</p>
-  </footer>
+  <footer><img src="image4.png" alt="Golden Shore" /><p style="font-family:'Playfair Display',serif;font-style:italic;color:rgba(240,208,128,0.8);margin-bottom:.4rem;">Onde o seu verão se torna divino</p><p>Criado por <strong>Camily, Miguel e Noah</strong> &middot; Trabalho de História &middot; Victor Cecchini</p></footer>
 </div>
-
-<!-- ===== JAVASCRIPT ===== -->
 <script>
-  const pages   = ['inicio','masc','fem','desconto','dif'];
-  const navIds  = ['nav-inicio','nav-masc','nav-fem','nav-desconto','nav-dif'];
-
+  const pages = ['inicio','masc','fem','desconto','dif'];
+  const navIds = ['nav-inicio','nav-masc','nav-fem','nav-desconto','nav-dif'];
   function showPage(name) {
-    pages.forEach(p => {
-      const el = document.getElementById('page-' + p);
-      if (el) {
-        el.style.display = 'none';
-        el.classList.remove('active');
-      }
-    });
-
-    navIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.classList.remove('active');
-    });
-
-    const target = document.getElementById('page-' + name);
-    if (target) {
-      target.style.display = 'block';
-      target.classList.add('active');
-    }
-
-    const navMap = { inicio:'nav-inicio', masc:'nav-masc', fem:'nav-fem', desconto:'nav-desconto', dif:'nav-dif' };
-    const navEl = document.getElementById(navMap[name]);
-    if (navEl) navEl.classList.add('active');
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    pages.forEach(p => { const el = document.getElementById('page-'+p); if(el){ el.style.display='none'; el.classList.remove('active'); } });
+    navIds.forEach(id => { const el = document.getElementById(id); if(el) el.classList.remove('active'); });
+    const target = document.getElementById('page-'+name);
+    if(target){ target.style.display='block'; target.classList.add('active'); }
+    const navMap = {inicio:'nav-inicio',masc:'nav-masc',fem:'nav-fem',desconto:'nav-desconto',dif:'nav-dif'};
+    const navEl = document.getElementById(navMap[name]); if(navEl) navEl.classList.add('active');
+    window.scrollTo({top:0,behavior:'smooth'});
   }
-
-  // página desconto precisa de display flex
   const descontoOrig = document.getElementById('page-desconto');
-  if (descontoOrig) descontoOrig.style.display = 'none';
-
-  // sobrescreve showPage para tratar desconto (flex)
+  if(descontoOrig) descontoOrig.style.display='none';
   const _showPage = showPage;
-  window.showPage = function(name) {
-    _showPage(name);
-    if (name === 'desconto') {
-      const el = document.getElementById('page-desconto');
-      if (el) el.style.display = 'flex';
-    }
-  };
-
-  // inicializa
+  window.showPage = function(name) { _showPage(name); if(name==='desconto'){ const el=document.getElementById('page-desconto'); if(el) el.style.display='flex'; } };
   showPage('inicio');
 </script>
-
 </body>
-</html>
+                                                    </html>
