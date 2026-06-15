@@ -244,6 +244,11 @@
 
     .product-card:hover .product-img-wrap img { transform: scale(1.05); }
 
+    /* Acessórios: exibe o produto completo sem corte */
+    #page-acess .product-img-wrap img {
+      object-fit: contain; object-position: center center; padding: 1rem;
+    }
+
     .product-info { padding: 1.4rem 1.6rem 1.8rem; }
 
     .product-name { font-family: var(--font-h); font-size: 1.1rem; color: var(--navy); margin-bottom: .3rem; }
